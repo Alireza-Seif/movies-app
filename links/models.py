@@ -20,5 +20,7 @@ class Link(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
+            
+
 
         return super().save(*args, **kwargs)
