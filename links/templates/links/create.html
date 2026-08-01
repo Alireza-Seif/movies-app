@@ -1,5 +1,11 @@
 {% extends 'links/_base.html' %} {% block content %}
-<form action="">
-  <input type="text" /><input type="submit" value="Create" />
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="name" placeholder="Name">
+
+    <input type="url" name="url" placeholder="https://example.com">
+
+    <input type="submit" value="Create">
 </form>
-{% endblock content %}
+{% endblock %}

@@ -18,4 +18,12 @@ def root_link(request, link_slug):
 
 
 def add_link(request):
-    return render(request, "links/create.html", {})
+    if request.method == "POST":
+        name = request.POST.get("name")
+        url = request.POST.get("url")
+
+        Link.objects.create(name=name, url=url)
+
+        return redirect("home")
+
+    return render(request, "links/create.html")
