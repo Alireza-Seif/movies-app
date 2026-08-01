@@ -1,11 +1,8 @@
-{% extends 'links/_base.html' %} {% block content %}
-<form method="POST">
-    {% csrf_token %}
-
-    <input type="text" name="name" placeholder="Name">
-
-    <input type="url" name="url" placeholder="https://example.com">
-
-    <input type="submit" value="Create">
+{% extends 'links/_base.html' %}
+{% block content %}
+<form action="" method="POST">
+  {% csrf_token %}
+  {{form}}
+  <input type="submit" value="Create" />
 </form>
-{% endblock %}
+{% endblock content %}
