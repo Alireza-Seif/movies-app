@@ -1,61 +1,16 @@
 {% extends 'link_plant/_base.html' %}
+{% load tailwind_filters %}
+
 {% block content %}
-  <h1 class="text-4xl text-center mb-10">Add a New Link</h1>
-
-  <div
-    class="max-w-4xl mx-auto rounded-xl border border-gray-200 bg-white p-8 shadow-sm"
-  >
-    <form action="" method="post" class="space-y-6">
-      {% csrf_token %}
-
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <div>
-          <label
-            for="{{ form.text.id_for_label }}"
-            class="mb-2 block text-sm font-medium text-gray-700"
-          >
-            {{ form.text.label }}
-          </label>
-          {{ form.text }}
-          {% if form.text.errors %}
-            <p class="mt-1 text-sm text-red-600">{{ form.text.errors|striptags }}</p>
-          {% endif %}
-        </div>
-
-        <div>
-          <label
-            for="{{ form.url.id_for_label }}"
-            class="mb-2 block text-sm font-medium text-gray-700"
-          >
-            {{ form.url.label }}
-          </label>
-          {{ form.url }}
-          {% if form.url.errors %}
-            <p class="mt-1 text-sm text-red-600">{{ form.url.errors|striptags }}</p>
-          {% endif %}
-        </div>
-
-        <div>
-          <label
-            for="{{ form.profile.id_for_label }}"
-            class="mb-2 block text-sm font-medium text-gray-700"
-          >
-            {{ form.profile.label }}
-          </label>
-          {{ form.profile }}
-          {% if form.profile.errors %}
-            <p class="mt-1 text-sm text-red-600">{{ form.profile.errors|striptags }}</p>
-          {% endif %}
-        </div>
-      </div>
-
-      <div class="pt-2">
-        <input
-          type="submit"
-          value="Save Link"
-          class="rounded bg-blue-200 px-6 py-3 transition hover:cursor-pointer hover:bg-blue-300"
-        />
-      </div>
-    </form>
-  </div>
+  <h1 class="text-4x1">Link Form</h1>
+  <hr class="my-4" />
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form|crispy}}
+    <input
+      type="submit"
+      value="Save Link"
+      class="px-6 py-3 bg-blue-200 hover:cursor-pointer hover:bg-blue-300 rounded"
+    />
+  </form>
 {% endblock content %}
