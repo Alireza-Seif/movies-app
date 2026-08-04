@@ -9,7 +9,7 @@ class HomeView(TemplateView):
     template_name = "trip/index.html"
 
 
-def trips_list(request):
-    trips = Trip.objects.all()
+def trip_list(request):
+    trips = Trip.objects.filter(owner=request.user)
     context = {"trips": trips}
     return render(request, "trip/trip_list.html", context)
