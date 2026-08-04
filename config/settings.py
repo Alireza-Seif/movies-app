@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-%(=1qjtyp%htsjvy$i9uyefcd+y*0*kn=(7ksa@&8ds(p-608q"
+SECRET_KEY = "django-insecure-5kxv*kvkk)%=%-u_7r0aw%--efc+v7$ee*u+ox=6c84#8y_e61"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,11 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # 3rd party
-    "crispy_forms",
-    "crispy_tailwind",
     # local apps
-    "link_plant",
+    "trip",
 ]
 
 MIDDLEWARE = [
@@ -120,7 +117,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
-
-# Crispy form settings
-CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
-CRISPY_TEMPLATE_PACK = "tailwind"
