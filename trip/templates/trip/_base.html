@@ -11,29 +11,29 @@
         class="md:h-screen bg-gray-700 text-white w-full md:w-1/4 md:max-w-xs py-2 md:pt-8 md:pb-2 flex"
       >
         <div class="border-b w-full text-center pb-4 text-2xl">
-          <h1>📌 Trip Trak</h1>
+          <h1>📌 Trip Track</h1>
         </div>
         <div class="pt-4 w-full text-center">
           <ul class="flex md:flex-col justify-around px-2 md:px-0 pb-2 md:pb-0">
             <li
               class="py-2 px-3 md:px-0 hover:bg-gray-600 hover:cursor-pointer"
             >
-              My Trips
+              <a href="{% url 'trip-list' %}">My Trips</a>
             </li>
             <li
               class="py-2 px-3 md:px-0 hover:bg-gray-600 hover:cursor-pointer"
             >
-              New Trip +
+              <a href="{% url 'trip-create' %}">New Trip +</a>
             </li>
             <li
               class="py-2 px-3 md:px-0 hover:bg-gray-600 hover:cursor-pointer"
             >
-              My Notes
+              <a href="{% url 'trip-list' %}">My Notes</a>
             </li>
             <li
               class="py-2 px-3 md:px-0 hover:bg-gray-600 hover:cursor-pointer"
             >
-              New Note +
+              <a href="{% url 'trip-create' %}">New Note +</a>
             </li>
           </ul>
         </div>

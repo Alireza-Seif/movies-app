@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, TemplateView
 
 from .models import Trip, Note
 
@@ -13,3 +14,14 @@ def trip_list(request):
     trips = Trip.objects.filter(owner=request.user)
     context = {"trips": trips}
     return render(request, "trip/trip_list.html", context)
+
+
+class TripCreateView(CreateView):
+    model = Trip
+    success_url = reverse_lazy("trip-list")
+    fields = ["city", "country", "start_date", "end_date"]
+
+
+def form_valid(self, form):
+    form.instance.owner = self.request.user
+    return super().form_valid(form)

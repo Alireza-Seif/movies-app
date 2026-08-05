@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    #3rd party
+    'crispy_forms',
+    'crispy_tailwind',
     # local apps
     "trip",
 ]
@@ -125,3 +128,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 # where should the user after login - if not next
 LOGIN_REDIRECT_URL = "trip_list"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
