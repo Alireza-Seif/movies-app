@@ -1,6 +1,7 @@
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, TemplateView, DetailView
+from django.views.generic import CreateView, TemplateView, DetailView, ListView
 
 from .models import Trip, Note
 
@@ -37,5 +38,14 @@ class TripDetailView(DetailView):
         context["notes"] = notes
         return context
 
+
 class NoteDetailView(DetailView):
     model = Note
+
+
+class NoteListView(ListView):
+    model = Note
+
+    def get_queryset(self):
+        queryset = Note.objects.filter(trip__owner=self.request.user)
+        return queryset
