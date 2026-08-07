@@ -36,3 +36,6 @@ class TripDetailView(DetailView):
 
         context["notes"] = notes
         return context
+
+class NoteDetailView(DetailView):
+    model = Note

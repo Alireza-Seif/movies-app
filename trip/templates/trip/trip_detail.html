@@ -10,7 +10,7 @@
   <h3 class="text-xl pb-4">Notes:</h3>
   <div class="flex gap-2 flex-wrap">
     {% for note in notes %}
-      <a href="">
+      <a href="{% url 'note-detail' note.pk %}">
         <div class="border-2 rounded-lg pb-4 hover:shadow">
           {% if note.img %}
             <img
